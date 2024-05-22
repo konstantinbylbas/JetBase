@@ -1,3 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap");
+*,
+*::before,
+*::after {
+  color: #E9E8E8;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+}
 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+@media only screen and (max-width: 1200px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+p,
+a,
+td,
+li,
+label,
+input,
+button {
+  font-size: 1rem;
+}
+@media only screen and (max-width: 768px) {
+  p,
+  a,
+  td,
+  li,
+  label,
+  input,
+  button {
+    font-size: 0.8rem;
+  }
+}
+
+body {
+  width: 100%;
+  background-color: #20262E;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 1100px;
+  margin: 5rem auto;
+}
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 95%;
+  }
+}
+.container_method {
+  width: 45%;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #913175;
+  border: none;
+  border-radius: 0.2rem;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button:hover, button:active {
+  background-color: #CD5888;
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.my-3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -15,5 +15,107 @@
 
         <title>Konstantin Bylbas</title>
     </head>
-    <body></body>
+    <body>
+        <div class="container">
+            <h1 class="mb-3 text-center">Range: <span id="range"></span></h1>
+
+            <div class="row">
+                <div class="container_method">
+                    <h2>Method 0</h2>
+                    <p class="my-2" id="method_0_result"></p>
+                    <p class="my-2">
+                        Complexity: <span id="method_0_complexity"></span>
+                    </p>
+                    <ul class="my-3">
+                        <li class="my-2">
+                            Easier to understand and implement.
+                        </li>
+                        <li class="my-2">
+                            Works faster with smaller amounts of data because it
+                            does not require additional sums and squares
+                            calculations.
+                        </li>
+                        <li class="my-2">Depends on the order of numbers</li>
+                    </ul>
+                </div>
+
+                <div class="container_method">
+                    <h2>Method 1</h2>
+                    <p class="my-2" id="method_1_result"></p>
+                    <p class="my-2">
+                        Complexity: <span id="method_1_complexity"></span>
+                    </p>
+                    <ul class="my-3">
+                        <li class="my-2">
+                            Allows the absence of numbers to be determined
+                            regardless of order.
+                        </li>
+                        <li class="my-2">
+                            More efficient in terms of memory usage, as it does
+                            not require storing the entire sequence in memory if
+                            the numbers arrive in a stream.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-3 text-center">
+                <button onclick="handlerClick()">Reset range</button>
+            </div>
+        </div>
+    </body>
+
+    <script src="./services/range.service.js"></script>
+    <script>
+        const missingElementsCount = 2;
+        const rangeStart = 0;
+        const rangeEnd = 100000;
+
+        const calculateComplexity = (
+            rangeStart,
+            rangeEnd,
+            missingElementsCount,
+        ) => {
+            const totalElements = rangeEnd - rangeStart + 1;
+            return totalElements - missingElementsCount;
+        };
+
+        const init = () => {
+            const range = new Range(rangeStart, rangeEnd);
+
+            document.querySelector(
+                '#range',
+            ).innerText = `[${rangeStart}, ..., ${rangeEnd}]`;
+
+            document.querySelector('#method_0_result').innerText = `${range
+                .method_0()
+                .join(', ')}`;
+
+            document.querySelector('#method_1_result').innerText = `${range
+                .method_1()
+                .join(', ')}`;
+
+            document.querySelector(
+                '#method_0_complexity',
+            ).innerText = `O(${calculateComplexity(
+                rangeStart,
+                rangeEnd,
+                missingElementsCount,
+            )})`;
+
+            document.querySelector(
+                '#method_1_complexity',
+            ).innerText = `O(${calculateComplexity(
+                rangeStart,
+                rangeEnd,
+                missingElementsCount,
+            )})`;
+        };
+
+        const handlerClick = () => {
+            init();
+        };
+
+        init();
+    </script>
 </html>
