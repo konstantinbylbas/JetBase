@@ -1,8 +1,8 @@
 /** @format */
 
-class Range {
+class RangeService {
     from = 0;
-    to = 0
+    to = 0;
     range = [];
 
     constructor(from, to) {
@@ -14,7 +14,7 @@ class Range {
 
     init(from, to) {
         if (from > to) {
-            throw('Incorrect start range value');
+            throw 'Incorrect start range value';
         }
 
         for (let i = from; i <= to; i++) {
@@ -26,8 +26,6 @@ class Range {
             const randomIndex = Math.floor(Math.random() * this.range.length);
             this.range.splice(randomIndex, 1);
         }
-
-        console.log(this.range);
     }
 
     method_0() {
@@ -37,7 +35,6 @@ class Range {
             missingNumbers.push(this.range[0] - 1);
         }
 
-        
         for (let i = 1; i < this.range.length; i++) {
             if (this.range[i] - this.range[i - 1] == 2) {
                 missingNumbers.push(this.range[i] - 1);
@@ -48,7 +45,10 @@ class Range {
         }
 
         const lastElement = this.range[this.range.length - 1];
-        if (lastElement !== this.to &&  lastElement < this.range[this.range.length - 2] + 2) {
+        if (
+            lastElement !== this.to &&
+            lastElement < this.range[this.range.length - 2] + 2
+        ) {
             missingNumbers.push(lastElement + 1);
         }
 
@@ -57,10 +57,14 @@ class Range {
 
     method_1() {
         const totalSum = (this.to * (this.to + 1)) / 2;
-        const totalSumSquares = (this.to * (this.to + 1) * (2 * this.to + 1)) / 6;
+        const totalSumSquares =
+            (this.to * (this.to + 1) * (2 * this.to + 1)) / 6;
 
         const arrSum = this.range.reduce((sum, num) => sum + num, 0);
-        const arrSumSquares = this.range.reduce((sum, num) => sum + num * num, 0);
+        const arrSumSquares = this.range.reduce(
+            (sum, num) => sum + num * num,
+            0,
+        );
 
         const sumDiff = totalSum - arrSum;
         const sumSquaresDiff = totalSumSquares - arrSumSquares;
