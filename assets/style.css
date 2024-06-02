@@ -65,6 +65,20 @@ body {
   overflow-x: hidden;
 }
 
+.method_code {
+  height: 300px;
+  margin: 2rem 0;
+  padding: 0.5rem;
+  background-color: rgba(205, 88, 136, 0.1);
+  border-radius: 0.2rem;
+  overflow-y: auto;
+}
+.method_code code {
+  color: #ff6f41;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+}
+
 .container {
   width: 1100px;
   margin: 5rem auto;
@@ -76,6 +90,17 @@ body {
 }
 .container_method {
   width: 45%;
+}
+@media only screen and (max-width: 600px) {
+  .container_method {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container .row {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
 }
 
 button {
@@ -142,6 +167,52 @@ button:hover, button:active {
 
 .text-center {
   text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: rgba(205, 88, 136, 0.2);
+  /* Stripe */
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0.2rem;
+}
+
+/* Arrows */
+::-webkit-scrollbar-button:vertical:start:decrement {
+  height: 0;
+  background: linear-gradient(120deg, #20262E 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(240deg, #20262E 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(0deg, #20262E 30%, rgba(0, 0, 0, 0) 31%);
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+  height: 0;
+  background: linear-gradient(300deg, #20262E 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(60deg, #20262E 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(180deg, #20262E 30%, rgba(0, 0, 0, 0) 31%);
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  height: 0;
+  background: linear-gradient(30deg, #20262E 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(150deg, #20262E 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(270deg, #20262E 30%, rgba(0, 0, 0, 0) 31%);
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  height: 0;
+  background: linear-gradient(210deg, #20262E 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(330deg, #20262E 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(90deg, #20262E 30%, rgba(0, 0, 0, 0) 31%);
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-button:vertical:end:increment,
+::-webkit-scrollbar-button:vertical:start:decrement,
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment {
+  background-color: #913175;
+}
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-button:vertical:end:increment:hover,
+::-webkit-scrollbar-button:vertical:start:decrement:hover,
+::-webkit-scrollbar-button:horizontal:start:decrement:hover,
+::-webkit-scrollbar-button:horizontal:end:increment:hover {
+  background-color: #CD5888;
 }
 
 /*# sourceMappingURL=style.css.map */

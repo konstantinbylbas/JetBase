@@ -3,6 +3,7 @@
 $dark: #20262E;
 $primary: #913175;
 $secondary: #CD5888;
+$code: #ff6f41;
 $light: #E9E8E8;
 
 *,
@@ -58,6 +59,21 @@ body{
     overflow-x: hidden; 
 }
 
+.method_code {
+  height: 300px;
+  margin: 2rem 0;
+  padding: 0.5rem;
+  background-color: rgba($color: $secondary, $alpha: 0.1);
+  border-radius: 0.2rem;
+  overflow-y: auto;
+    
+  code {
+    color: $code;
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+  }
+}
+
 .container {
   width: 1100px;
   margin: 5rem auto;
@@ -67,6 +83,17 @@ body{
 
   &_method {
     width: 45%;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+
+  .row {
+    @media only screen and (max-width: 600px) {
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
   }
 }
 
@@ -139,3 +166,53 @@ button {
 .text-center {
   text-align: center;
 }
+
+//******************custom scrollBar******************
+::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: rgba($color: $secondary, $alpha: 0.2);
+
+  /* Stripe */
+  &-thumb {
+    border-radius: 0.2rem;
+  }
+}
+
+/* Arrows */
+::-webkit-scrollbar-button:vertical:start:decrement {
+  height: 0;
+  background: linear-gradient(120deg, $dark 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(240deg, $dark 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(0deg, $dark 30%, rgba(0, 0, 0, 0) 31%);
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+  height: 0;
+  background: linear-gradient(300deg, $dark 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(60deg, $dark 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(180deg, $dark 30%, rgba(0, 0, 0, 0) 31%);
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  height: 0;
+  background: linear-gradient(30deg, $dark 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(150deg, $dark 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(270deg, $dark 30%, rgba(0, 0, 0, 0) 31%);
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  height: 0;
+  background: linear-gradient(210deg, $dark 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(330deg, $dark 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(90deg, $dark 30%, rgba(0, 0, 0, 0) 31%);
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-button:vertical:end:increment,
+::-webkit-scrollbar-button:vertical:start:decrement,
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment {
+  background-color: $primary;
+
+  &:hover {
+    background-color: $secondary;
+  }
+}
+
